@@ -1,0 +1,19 @@
+
+
+After creating the feature, the following file additions were made:
+
+clf.module
+// this function adds css and js
+function clf_slideshow_init() {
+  //drupal_add_css(drupal_get_path('module', 'clf_slideshow') . '/css/feeds.css');
+  drupal_add_js(drupal_get_path('module', ‘clf_slideshow') . '/js/slideshow.js');
+}
+
+clf_slideshow.features.inc
+// this function is a modification of the existing features function to add a template path so we can include our views template. Normally would be included in article_with_slideshow.module, but it is already in use here.
+function clf_slideshow_views_api() {
+  return array(
+    "api" => "3.0",
+    'path' => drupal_get_path('module', 'clf_slideshow'),
+    'template path' => drupal_get_path('module', 'clf_slideshow') . '/templates',);
+}

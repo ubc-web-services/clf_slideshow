@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Code for the CLF Slideshow feature.
+ */
+
+include_once 'clf_slideshow.features.inc';
+
+function clf_slideshow_init() {
+  //drupal_add_css(drupal_get_path('module', 'clf_slideshow') . '/css/feeds.css');
+  drupal_add_js(drupal_get_path('module', 'clf_slideshow') . '/js/slideshow.js');
+}
